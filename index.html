@@ -1,52 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Link to my csss --->
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Alana playlist  Player</title>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="header-content">
-        <h1>ALN Player</h1>
-        <div class="student-info">
-          <p><!-- Student info i putted --></p>
-        </div>
-      </div>
-    </header>
+<!-- /**
+ * Documentations That I used are :-
+ * LastFm Api docs : https://www.last.fm/api
+ * spotify documentation : https://developer.spotify.com/documentation/web-api
+ * mdn web docs :- 1) https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+ *                 2) https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction
+ *                 3) https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
+ *
+ **/ -->
 
-    <!-- Genre and seelection  -->
-    <div class="chooser">
-      <label for="genre">Select Genre:</label>
-      <select id="genre">
-        <!-- options of it  -->
-        <option value="rock">Rock</option>
-        <option value="pop">Pop</option>
-        <option value="hip hop">Hip Hop</option>
-        <option value="jazz">Jazz</option>
-        <option value="country">Country</option>
-        <option value="blues">Blues</option>
-        <option value="metal">Metal</option>
-        <option value="classical">Classical</option>
-        <option value="reggae">Reggae</option>
-        <option value="electronic">Electronic</option>
-        <option value="folk">Folk</option>
-        <option value="indie">Indie</option>
-        <option value="latin">Latin</option>
-        <option value="rnb">R&B</option>
-      </select>
-
-      <!-- Button to search  -->
-      <button id="search-btn">Fsearch tracks </button>
-    </div>
-
-    <!-- Result section -->
-    <div id="result"></div>
-
-    <!-- Link to JavaScript file -->
-    <script src="./js/script.js"></script>
-  </body>
-</html>
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- Link to my csss --->
+     <link rel="stylesheet" href="./css/styles.css" />
+     <title>Alana playlist  Player</title>
+   </head>
+   <body>
+     <!-- Header -->
+     <header>
+       <div class="header-content">
+         <h1>AMS  Playlist</h1>
+         <div class="student-info">
+           <p><!-- Student info i putted --></p>
+         </div>
+       </div>
+     </header>
+ 
+     <!-- Genre and seelection  -->
+     <div class="chooser">
+       <label for="genre">CHOOSE GENRE:</label>
+       <select id="genre">
+         <!-- options of it  -->
+         <option value="rock">Rock</option>
+         <option value="pop">Pop</option>
+         <option value="hip hop">Hip Hop</option>
+         <option value="jazz">Jazz</option>
+         <option value="country">Country</option>
+         <option value="blues">Blues</option>
+         <option value="metal">Metal</option>
+         <option value="classical">Classical</option>
+         <option value="reggae">Reggae</option>
+         <option value="electronic">Electronic</option>
+         <option value="folk">Folk</option>
+         <option value="indie">Indie</option>
+         <option value="latin">Latin</option>
+         <option value="rnb">R&B</option>
+       </select>
+ 
+       <!-- Button to search  -->
+       <button id="search-btn">search tracks </button>
+     </div>
+ 
+     <!-- Result section -->
+     <div id="result"></div>
+ 
+     <!-- Link to JavaScript file -->
+     <script src="./js/script.js"></script>
+   </body>
+ </html>
+ 
