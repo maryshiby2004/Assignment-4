@@ -1,12 +1,4 @@
-/**
- * Documentations That I used are :-
- * LastFm Api docs : https://www.last.fm/api
- * spotify documentation : https://developer.spotify.com/documentation/web-api
- * mdn web docs :- 1) https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
- *                 2) https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction
- *                 3) https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
- *
- */
+
 document.addEventListener("DOMContentLoaded", function () {
     // function to het detailss
     const result = document.getElementById("result");
