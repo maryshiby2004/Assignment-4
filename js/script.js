@@ -5,18 +5,18 @@
  * mdn web docs :- 1) https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
  *                 2) https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction
  *                 3) https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
- * Along with that i have also used Stackoverflow to deal with my errors
+ *
  */
 document.addEventListener("DOMContentLoaded", function () {
-    // Get references to HTML elements
+    // function to het detailss
     const result = document.getElementById("result");
     const searchBtn = document.getElementById("search-btn");
     const genreSelect = document.getElementById("genre");
   
-    // API key for Last.fm
+    // APi key i genrated  
     const apiKey = "6eabbc94590c36dfad51ec088400339f";
   
-    // Dynamically add student info
+    //  my info
     const studentId = "200559969";
     const studentName = "Alana Mary Shiby";
     const headerContent = document.querySelector(".header-content");
@@ -24,16 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
     studentInfo.textContent = `Student ID: ${studentId} | Name: ${studentName}`;
     document.querySelector(".student-info").appendChild(studentInfo);
   
-    // Event listener for the search button
+    // Event lto search 
     searchBtn.addEventListener("click", async () => {
-      // Get the selected genre from the dropdown
+      
       const selectedGenre = genreSelect.value;
   
       try {
-        // Fetch top tracks based on the selected genre
+       
         const topTracks = await fetchTopTracks(apiKey, selectedGenre);
   
-        // Display the fetched tracks
+        // Display the details 
         displayTracks(topTracks);
       } catch (error) {
         console.error("Error:", error);
@@ -41,22 +41,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   
-    // Function to fetch top tracks from Last.fm API
+    
     async function fetchTopTracks(apiKey, genre) {
       try {
-        // Make a request to the Last.fm API to get top tracks for the selected genre
+        // request to api
         const response = await fetch(
           `https://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${genre}&api_key=${apiKey}&format=json&limit=5&lang=en`
         );
   
-        // Check if the response is successful
+        //  successful try and error 
         if (!response.ok) {
           throw new Error(
             `Fetching top tracks failed with status ${response.status}`
           );
         }
   
-        // Parse the JSON response
+    
         const data = await response.json();
   
         // Extract the tracks from the response
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
       // Loop through each track and display its information
       for (const track of tracks) {
-        // Fetch additional details for each track
+        // Fetching additional details for each track
         const albumImage = await fetchAlbumImage(
           apiKey,
           track.artist.name,
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
           track.name
         );
   
-        // Display the track information in the HTML
+        // Display all the  track information inside the HTML
         result.innerHTML += `
             <div class="track">
               <img src="${albumImage}" alt="${track.name}">
@@ -98,43 +98,41 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   
-    // Function to fetch the album image for a track
+    // adding a function to fetch the album image for a track
     async function fetchAlbumImage(apiKey, artist, track) {
       try {
-        // Make a request to the Last.fm API to get track details
+        // Making  a request to the Last.fm API to get track details
         const response = await fetch(
           `https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${encodeURIComponent(
             artist
           )}&track=${encodeURIComponent(track)}&format=json`
         );
   
-        // Check if the response is successful
         if (!response.ok) {
           throw new Error(
             `Fetching album image failed with status ${response.status}`
           );
         }
   
-        // Parse the JSON response
+        
         const data = await response.json();
   
-        // Extract the album image from the response
-        const albumImage = data.track.album.image[3]["#text"]; // Use index 3 for larger images
+        const albumImage = data.track.album.image[3]["#text"]; 
   
-        // Return the album image or a default image if not available
+        
         return albumImage || "default_image_url.jpg";
       } catch (error) {
         console.error("Fetch album image error:", error);
   
-        // Return a default image in case of errors
+        //in case an errors shows up return to default image
         return "default_image_url.jpg";
       }
     }
   
-    // Function to fetch additional details for a track
+    // adding a function to fetch additional details for a track
     async function fetchTrackDetails(apiKey, artist, track) {
       try {
-        // Make a request to the Last.fm API to get track details
+        // Making a request to the Last.fm API to get track details
         const response = await fetch(
           `https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${encodeURIComponent(
             artist
@@ -151,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Parse the JSON response
         const data = await response.json();
   
-        // Extract the album title and track URL from the response
+        // Extract all the album title and track URL from the response
         return {
           album: data.track.album.title,
           url: data.track.url,
@@ -159,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } catch (error) {
         console.error("Fetch track details error:", error);
   
-        // Return default details in case of errors
+        // in case of errors return to default
         return {
           album: "Unknown",
           url: "#",
