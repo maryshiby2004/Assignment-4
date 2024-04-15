@@ -1,0 +1,125 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-image: linear-gradient(to top, #1a1a2e 0%, #16213e 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: 200vh;
+}
+
+header {
+    width: 100%;
+    background-color: #00f;
+    padding: 20px 0;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.student-info p {
+    margin: 0;
+}
+
+.chooser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin-top: 80px;
+}
+
+label {
+    margin-right: 10px;
+    color: #00f;
+    font-weight: bold;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #282828;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 2rem;
+}
+
+button:hover {
+    background-color: #f00;
+}
+
+.track {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.track:hover {
+    background-color: #383838;
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #00f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.team-blue {
+    color: #00f;
+}
+
+.team-red {
+    color: #f00;
+}
